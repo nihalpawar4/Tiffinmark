@@ -1,0 +1,115 @@
+/* ===== Migration Modal Styles ===== */
+.migration-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    padding: var(--space-4);
+    animation: fadeIn var(--transition-fast) ease;
+}
+
+.migration-modal {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    max-width: 440px;
+    width: 100%;
+    animation: slideUp var(--transition-base) ease;
+}
+
+.migration-header {
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.migration-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent-muted);
+    border-radius: var(--radius-full);
+    color: var(--color-accent);
+    margin: 0 auto var(--space-4);
+}
+
+.migration-header h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-2);
+}
+
+.migration-header p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.migration-options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.migration-option-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    background: var(--color-bg-tertiary);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-align: left;
+    transition: all var(--transition-fast);
+}
+
+.migration-option-btn:hover {
+    border-color: var(--color-border-hover);
+    background: var(--color-bg-hover);
+}
+
+.migration-option-btn.primary:hover {
+    border-color: var(--color-accent);
+    background: var(--color-accent-muted);
+}
+
+.migration-option-btn.primary svg {
+    color: var(--color-accent);
+}
+
+.migration-option-btn.secondary svg {
+    color: var(--color-text-muted);
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.option-title {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.option-desc {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.migration-note {
+    text-align: center;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}

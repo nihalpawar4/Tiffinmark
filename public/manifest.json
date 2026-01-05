@@ -1,0 +1,45 @@
+{
+  "name": "TiffinTrack - Daily Tiffin Tracker",
+  "short_name": "TiffinTrack",
+  "description": "Track your daily tiffin subscription effortlessly",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#c9a962",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": ["productivity", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Calendar",
+      "url": "/calendar",
+      "description": "View and mark your tiffin status"
+    },
+    {
+      "name": "Reports",
+      "url": "/reports",
+      "description": "View your tiffin statistics"
+    }
+  ]
+}

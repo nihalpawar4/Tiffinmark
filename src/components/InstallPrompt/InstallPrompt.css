@@ -1,0 +1,145 @@
+/* Install Prompt Styles */
+.install-prompt {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 150;
+    padding: var(--space-4);
+    animation: slideFromBottom 0.4s ease;
+}
+
+@keyframes slideFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideToBottom {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+.install-prompt.hiding {
+    animation: slideToBottom 0.3s ease forwards;
+}
+
+.install-prompt-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: var(--space-4);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 -4px 20px rgba(201, 169, 98, 0.2);
+}
+
+.install-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent-muted);
+    border-radius: var(--radius-lg);
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.install-text {
+    flex: 1;
+}
+
+.install-text h4 {
+    font-family: var(--font-display);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+}
+
+.install-text p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.install-text strong {
+    color: var(--color-accent);
+}
+
+.install-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.install-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-accent);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.install-btn:hover {
+    background: var(--color-accent-light);
+    transform: translateY(-1px);
+}
+
+.dismiss-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+.dismiss-btn:hover {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+    .install-prompt-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-3);
+    }
+
+    .install-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .install-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}

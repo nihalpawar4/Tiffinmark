@@ -1,0 +1,82 @@
+/* ===== Layout Styles ===== */
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding-top: 76px;
+    /* Height of navbar + border */
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding: var(--space-10) 0;
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+}
+
+.footer-name {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.footer-text {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.footer-credits {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+}
+
+.creator-name {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.footer-copyright {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 var(--space-4);
+    }
+
+    .footer {
+        padding: var(--space-8) 0;
+    }
+}

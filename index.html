@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description"
+    content="TiffinTrack - A simple, elegant way to track your daily tiffin subscription. Mark what you received, generate monthly reports, and stay organized." />
+  <meta name="keywords" content="tiffin, tracker, food, subscription, daily meal, tracking, calendar" />
+  <meta name="author" content="Nihal Pawar" />
+  <meta name="theme-color" content="#c9a962" />
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- iOS PWA Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TiffinTrack" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="TiffinTrack - Daily Tiffin Tracker" />
+  <meta property="og:description"
+    content="Track your daily tiffin effortlessly. Simple calendar view, monthly reports, and easy management." />
+  <meta property="og:type" content="website" />
+
+  <title>TiffinTrack - Daily Tiffin Tracker</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    // Register Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('SW registered:', registration.scope);
+          })
+          .catch((error) => {
+            console.log('SW registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+
+</html>
