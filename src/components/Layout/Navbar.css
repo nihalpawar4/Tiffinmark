@@ -302,7 +302,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
     transition: all var(--transition-base);
@@ -314,40 +314,44 @@
     visibility: visible;
 }
 
-/* Mobile Navigation Panel */
+/* Mobile Navigation Panel - Compact Dropdown Style */
 .mobile-nav {
     display: none;
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 300px;
-    max-width: 85vw;
-    background: var(--color-bg-primary);
-    border-left: 1px solid var(--color-border);
-    transform: translateX(100%);
-    transition: transform var(--transition-base) ease;
+    top: 64px;
+    /* Below navbar */
+    right: var(--space-4);
+    left: var(--space-4);
+    max-height: calc(100vh - 80px);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
     z-index: 99;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .mobile-nav.open {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 .mobile-nav-content {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
-    padding-top: 80px;
+    padding: var(--space-3);
 }
 
 .mobile-nav-links {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    padding: var(--space-4);
-    gap: var(--space-2);
+    gap: var(--space-1);
 }
 
 .mobile-nav-divider {
@@ -359,11 +363,11 @@
 .mobile-nav-link {
     display: flex;
     align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-4);
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
     color: var(--color-text-secondary);
-    border-radius: var(--radius-lg);
-    font-size: var(--text-base);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
     font-weight: 500;
     transition: all var(--transition-fast);
     text-decoration: none;
@@ -371,7 +375,7 @@
 
 .mobile-nav-link:hover {
     color: var(--color-text-primary);
-    background: var(--color-bg-card);
+    background: var(--color-bg-hover);
 }
 
 .mobile-nav-link.active {
@@ -389,33 +393,35 @@
 
 /* Mobile Nav Footer */
 .mobile-nav-footer {
-    padding: var(--space-4);
+    padding: var(--space-3);
+    margin-top: var(--space-2);
     border-top: 1px solid var(--color-border);
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-tertiary);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 .mobile-user-info {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    padding: var(--space-3);
-    margin-bottom: var(--space-3);
+    padding: var(--space-2);
+    margin-bottom: var(--space-2);
 }
 
 .user-avatar-img-mobile {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: var(--radius-full);
     object-fit: cover;
 }
 
 .mobile-user-info .user-avatar {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--color-bg-tertiary);
+    background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
     color: var(--color-text-secondary);
@@ -429,7 +435,9 @@
 .mobile-user-info .user-details {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
+    flex: 1;
+    min-width: 0;
 }
 
 .mobile-user-info .user-name {
@@ -437,6 +445,7 @@
     align-items: center;
     gap: var(--space-2);
     font-weight: 600;
+    font-size: var(--text-sm);
     color: var(--color-text-primary);
 }
 
@@ -452,13 +461,17 @@
 .mobile-user-info .user-email {
     font-size: var(--text-xs);
     color: var(--color-text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .mobile-signup-btn,
 .mobile-upgrade-btn {
     width: 100%;
     justify-content: center;
-    padding: var(--space-4);
+    padding: var(--space-3);
+    font-size: var(--text-sm);
 }
 
 /* Responsive */

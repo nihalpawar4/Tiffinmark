@@ -42,7 +42,7 @@ const Login = () => {
     // Redirect if already authenticated (but NOT if guest - guests can upgrade)
     useEffect(() => {
         if (isAuthenticated && !isGuest && !isLoading) {
-            navigate('/');
+            navigate('/calendar');
         }
     }, [isAuthenticated, isGuest, isLoading, navigate]);
 
@@ -61,7 +61,7 @@ const Login = () => {
         if (error) {
             setError(error.message);
         } else {
-            navigate('/');
+            navigate('/calendar');
         }
         setIsSubmitting(false);
     };
@@ -91,14 +91,14 @@ const Login = () => {
                 if (error) {
                     setError(error.message);
                 } else {
-                    navigate('/');
+                    navigate('/calendar');
                 }
             } else {
                 const { error } = await signInWithEmail(formData.email, formData.password);
                 if (error) {
                     setError(error.message);
                 } else {
-                    navigate('/');
+                    navigate('/calendar');
                 }
             }
         } catch {
@@ -110,7 +110,7 @@ const Login = () => {
 
     const handleContinueAsGuest = () => {
         continueAsGuest();
-        navigate('/');
+        navigate('/calendar');
     };
 
     if (isLoading) {
