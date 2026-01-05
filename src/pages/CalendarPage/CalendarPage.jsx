@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import Calendar from '../../components/Calendar/Calendar';
 import Stats from '../../components/Stats/Stats';
 import { useTiffin } from '../../context/TiffinContext';
 import { format } from 'date-fns';
-import { Lock, Unlock, Info } from 'lucide-react';
+import { Lock, Unlock, Info, ArrowLeft } from 'lucide-react';
 import './CalendarPage.css';
 
 const CalendarPage = () => {
@@ -27,6 +28,10 @@ const CalendarPage = () => {
             <div className="container">
                 {/* Page Header */}
                 <div className="page-header">
+                    <Link to="/" className="back-btn">
+                        <ArrowLeft size={20} />
+                        <span>Home</span>
+                    </Link>
                     <div>
                         <h1 className="page-title">Tiffin Calendar</h1>
                         <p className="page-subtitle">Click on any day to mark your tiffin status</p>
